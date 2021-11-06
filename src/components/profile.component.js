@@ -84,7 +84,7 @@ export default class Profile extends Component {
       //     itemStatus: String,
 
       return <tr key={item._id}>
-        <td style={{whiteSpace: 'nowrap'}}>{item.username}</td>
+        {/*<td style={{whiteSpace: 'nowrap'}}>{item.username}</td>*/}
         <td>{item.itemID}</td>
         <td>{item.itemName}</td>
         <td>{item.quantity}</td>
@@ -139,9 +139,9 @@ export default class Profile extends Component {
           <Table className="mt-4">
             <thead>
             <tr>
-              <th width="20%">User Name</th>
+              {/*<th width="20%">User Name</th>*/}
               <th width="20%">Item ID</th>
-              <th width="10%">Item Name</th>
+              <th width="20%">Item Name</th>
               <th>Quantity</th>
               <th>Status</th>
               {/*<th>Copyrightby</th>*/}

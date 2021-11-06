@@ -55,12 +55,12 @@ class ItemEdit extends Component {
             },
             body: JSON.stringify(item),
         });
-        this.props.history.push('/items');
+        this.props.history.push('/profile');
     }
 
     render() {
         const {item} = this.state;
-        const title = <h2>{item.id ? 'Edit Item' : 'Add Item'}</h2>;
+        const title = <h2>{item._id ? 'Edit Item' : 'Add Item'}</h2>;
 
         return <div>
             {/*<AppNavbar/>*/}
