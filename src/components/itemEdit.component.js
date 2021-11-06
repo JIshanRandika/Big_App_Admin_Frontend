@@ -29,7 +29,7 @@ class ItemEdit extends Component {
 
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
-            const item = await (await fetch(`/api/item/${this.props.match.params.id}`)).json();
+            const item = await (await fetch(`http://localhost:8080/api/item/${this.props.match.params.id}`)).json();
             this.setState({item: item});
         }
     }
@@ -47,7 +47,7 @@ class ItemEdit extends Component {
         event.preventDefault();
         const {item} = this.state;
 
-        await fetch('/api/item', {
+        await fetch('http://localhost:8080/api/item', {
             method: (item._id) ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -95,7 +95,7 @@ class ItemEdit extends Component {
 
                     <FormGroup>
                         <Button color="primary" type="submit">Save</Button>{' '}
-                        <Button color="secondary" tag={Link} to="/items">Cancel</Button>
+                        <Button color="secondary" tag={Link} to="/profile">Cancel</Button>
                     </FormGroup>
                 </Form>
             </Container>
