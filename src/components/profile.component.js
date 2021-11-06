@@ -31,14 +31,20 @@ export default class Profile extends Component {
 
     this.setState({isLoading: true});
 
-    fetch('http://localhost:8080/api/items')
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ searchUsername: currentUser.username})
+    };
+
+    fetch('http://localhost:8080/api/itemforuser',requestOptions)
         .then(response => response.json())
         .then(data => this.setState({items: data, isLoading: false}));
 
   }
 
   async remove(id) {
-    await fetch(`http://localhost:8080//api/item/${id}`, {
+    await fetch(`http://localhost:8080/api/item/${id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
