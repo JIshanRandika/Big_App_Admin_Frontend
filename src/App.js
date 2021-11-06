@@ -12,6 +12,8 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import ItemList from './components/itemEdit.component';
+import ItemEdit from './components/itemEdit.component';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -137,6 +139,8 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <Route path='/items' exact={true} component={ItemList}/>
+            <Route path='/items/:id' component={ItemEdit}/>
           </Switch>
         </div>
 
