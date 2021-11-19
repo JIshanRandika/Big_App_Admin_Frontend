@@ -7,7 +7,7 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
-export default class NewOrderComponent extends Component {
+export default class AcceptedOrderComponent extends Component {
     constructor(props) {
         super(props);
 
@@ -21,28 +21,10 @@ export default class NewOrderComponent extends Component {
 
         };
     }
-    // updateOrder=(orderID)=>{
-    //     console.log("orderID")
-    //     fetch('http://localhost:8080/api/order', {
-    //         method:'PUT',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //
-    //         body: JSON.stringify({
-    //             // _id:id,
-    //             orderID:orderID,
-    //             acceptStatus:'done'
-    //
-    //         }),
-    //     });
-    //
-    // }
 
 
     async updateOrder(id) {
-        fetch('http://localhost:8080/api/updateAcceptOrder', {
+        fetch('http://localhost:8080/api/updateReadyOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -51,7 +33,7 @@ export default class NewOrderComponent extends Component {
 
             body: JSON.stringify({
                 _id:id,
-                acceptStatus:'done'
+                readyStatus:'done'
 
             }),
         }).then(window.location.reload());
@@ -74,7 +56,7 @@ export default class NewOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('http://localhost:8080/api/neworderforuser',requestOptions)
+        fetch('http://localhost:8080/api/acceptedorderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 
@@ -129,23 +111,17 @@ export default class NewOrderComponent extends Component {
 
 
 
-            // return <div>
-            //
-            //     { this.state.orderIDList.map((item, key)=>(
-            //         <td key={key} > { item } </td>)
-            //     )}
-            // </div>
             return <tr key={item._id}>
 
                 <td>{item.orderID}</td>
                 <td>{ item.itemAndQuantity.map((item, key)=>(
-                        <div key={key} > { item } </div>)
-                    )}</td>
+                    <div key={key} > { item } </div>)
+                )}</td>
                 {/*<td><a href={customer.copyright}>{customer.copyright}</a></td>*/}
                 <td>
 
                     <ButtonGroup>
-                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Accept</Button>
+                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Ready</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -159,7 +135,7 @@ export default class NewOrderComponent extends Component {
                     <div>
                         <header className="jumbotron">
                             <h3>
-                                <strong>{currentUser.username}</strong> New Orders
+                                <strong>{currentUser.username}</strong> Accepted Orders
                             </h3>
                         </header>
 
@@ -169,7 +145,7 @@ export default class NewOrderComponent extends Component {
 
                 <Container fluid>
 
-                    <h3>New Order List</h3>
+                    <h3>Accepted Order List</h3>
                     <Table className="mt-4">
                         <thead>
                         <tr>
