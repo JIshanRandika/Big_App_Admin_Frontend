@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { Navbar, Container,Nav, NavDropdown} from 'react-bootstrap';
 
 import AuthService from "./services/auth.service";
 
@@ -68,91 +69,159 @@ class App extends Component {
 
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            BIG DEALERSHIP
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="/">BIG DEALERSHIP</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="/home">Home</Nav.Link>
+                {showModeratorBoard && (
+                    <Nav.Link href="/mod">Moderator Board</Nav.Link>
+                )}
+                {showAdminBoard && (
+                    <Nav.Link href="/admin">Admin Board</Nav.Link>
+                )}
+                {currentUser && (
+                    <Nav.Link href="/user">User</Nav.Link>
+                )}
 
-            {showModeratorBoard && (
-              <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
-              </li>
-            )}
+              </Nav>
+              <Nav>
+                {currentUser && (
+                    <Nav.Link eventKey={2} href="/neworder">
+                      New Orders
+                    </Nav.Link>
 
-            {showAdminBoard && (
-              <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
-                </Link>
-              </li>
-            )}
+                )}
+                {currentUser && (
+                    <Nav.Link eventKey={2} href="/acceptedorder">
+                      Accepted Orders
+                    </Nav.Link>
 
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </li>
-            )}
-          </div>
+                )}
+                {currentUser && (
+                    <Nav.Link eventKey={2} href="/readyorder">
+                      Ready Orders
+                    </Nav.Link>
 
-          {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/neworder"} className="nav-link">
-                  NewOrders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/acceptedorder"} className="nav-link">
-                  AcceptedOrders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/readyorder"} className="nav-link">
-                  ReadyOrders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/completedorder"} className="nav-link">
-                  CompletedOrders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
-                </a>
-              </li>
-            </div>
-          ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
-                  Login
-                </Link>
-              </li>
+                )}
+                {currentUser && (
+                    <Nav.Link eventKey={2} href="/completedorder">
+                      Completed Orders
+                    </Nav.Link>
 
-              <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-            </div>
-          )}
-        </nav>
+                )}
+
+                {currentUser ? (
+                    <Nav.Link href="/profile">{currentUser.username}</Nav.Link>
+                    ):(
+                    <Nav.Link href="/login">Login</Nav.Link>
+                )}
+
+
+                {currentUser ? (
+                    <Nav.Link href="/login">
+                      <a style={{margin:0,padding:0}} href="/login" className="nav-link" onClick={this.logOut}>
+                        Log Out
+                      </a>
+                    </Nav.Link>
+                ):(
+                    <Nav.Link href="/register">Sign Up</Nav.Link>
+                )}
+                {/*<Nav.Link href="#deets">More deets</Nav.Link>*/}
+
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+
+
+        {/*<nav className="navbar navbar-expand navbar-dark bg-dark">*/}
+          {/*<Link to={"/"} className="navbar-brand">*/}
+          {/*  BIG DEALERSHIP*/}
+          {/*</Link>*/}
+          {/*<div className="navbar-nav mr-auto">*/}
+          {/*  <li className="nav-item">*/}
+          {/*    <Link to={"/home"} className="nav-link">*/}
+          {/*      Home*/}
+          {/*    </Link>*/}
+          {/*  </li>*/}
+
+          {/*  {showModeratorBoard && (*/}
+          {/*    <li className="nav-item">*/}
+          {/*      <Link to={"/mod"} className="nav-link">*/}
+          {/*        Moderator Board*/}
+          {/*      </Link>*/}
+          {/*    </li>*/}
+          {/*  )}*/}
+
+          {/*  {showAdminBoard && (*/}
+          {/*    <li className="nav-item">*/}
+          {/*      <Link to={"/admin"} className="nav-link">*/}
+          {/*        Admin Board*/}
+          {/*      </Link>*/}
+          {/*    </li>*/}
+          {/*  )}*/}
+
+          {/*  {currentUser && (*/}
+          {/*    <li className="nav-item">*/}
+          {/*      <Link to={"/user"} className="nav-link">*/}
+          {/*        User*/}
+          {/*      </Link>*/}
+          {/*    </li>*/}
+          {/*  )}*/}
+          {/*</div>*/}
+
+        {/*  {currentUser ? (*/}
+        {/*    <div className="navbar-nav ml-auto">*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/profile"} className="nav-link">*/}
+        {/*          {currentUser.username}*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/neworder"} className="nav-link">*/}
+        {/*          NewOrders*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/acceptedorder"} className="nav-link">*/}
+        {/*          AcceptedOrders*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/readyorder"} className="nav-link">*/}
+        {/*          ReadyOrders*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/completedorder"} className="nav-link">*/}
+        {/*          CompletedOrders*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <a href="/login" className="nav-link" onClick={this.logOut}>*/}
+        {/*          LogOut*/}
+        {/*        </a>*/}
+        {/*      </li>*/}
+        {/*    </div>*/}
+        {/*  ) : (*/}
+        {/*    <div className="navbar-nav ml-auto">*/}
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/login"} className="nav-link">*/}
+        {/*          Login*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+
+        {/*      <li className="nav-item">*/}
+        {/*        <Link to={"/register"} className="nav-link">*/}
+        {/*          Sign Up*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*    </div>*/}
+        {/*  )}*/}
+        {/*</nav>*/}
 
         <div className="container mt-3">
           <Switch>
