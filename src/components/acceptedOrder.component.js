@@ -145,7 +145,7 @@ export default class AcceptedOrderComponent extends Component {
 
                 <Container fluid>
 
-                    <h3>Accepted Order List</h3>
+                    {/*<h3>Accepted Order List</h3>*/}
                     <Table className="mt-4">
                         <thead>
                         <tr>

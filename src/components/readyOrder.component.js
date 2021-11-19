@@ -145,7 +145,7 @@ export default class ReadyOrderComponent extends Component {
 
                 <Container fluid>
 
-                    <h3>Ready Order List</h3>
+                    {/*<h3>Ready Order List</h3>*/}
                     <Table className="mt-4">
                         <thead>
                         <tr>

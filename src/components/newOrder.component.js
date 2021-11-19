@@ -169,7 +169,7 @@ export default class NewOrderComponent extends Component {
 
                 <Container fluid>
 
-                    <h3>New Order List</h3>
+                    {/*<h3>New Order List</h3>*/}
                     <Table className="mt-4">
                         <thead>
                         <tr>

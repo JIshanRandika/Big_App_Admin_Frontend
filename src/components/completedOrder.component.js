@@ -157,7 +157,7 @@ export default class CompletedOrderComponent extends Component {
 
                 <Container fluid>
 
-                    <h3>Completed Order List</h3>
+                    {/*<h3>Completed Order List</h3>*/}
                     <Table className="mt-4">
                         <thead>
                         <tr>
