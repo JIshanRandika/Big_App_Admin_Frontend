@@ -42,7 +42,7 @@ export default class Profile extends Component {
 
 
     async updateOrder(id) {
-        fetch('http://localhost:8080/api/order', {
+        fetch('http://localhost:8080/api/updateAcceptOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
