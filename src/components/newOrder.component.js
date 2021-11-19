@@ -54,7 +54,7 @@ export default class Profile extends Component {
                 acceptStatus:'done'
 
             }),
-        });
+        }).then(window.location.reload());
     }
 
 
