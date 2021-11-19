@@ -37,7 +37,7 @@ export default class Profile extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('http://localhost:8080/api/orderforuser',requestOptions)
+        fetch('http://localhost:8080/api/neworderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 
