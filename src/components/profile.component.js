@@ -87,7 +87,7 @@ export default class Profile extends Component {
         {/*<td style={{whiteSpace: 'nowrap'}}>{item.username}</td>*/}
         <td>{item.itemID}</td>
         <td>{item.itemName}</td>
-        <td>{item.quantity}</td>
+        {/*<td>{item.quantity}</td>*/}
         <td>{item.itemStatus}</td>
         {/*<td><a href={customer.copyright}>{customer.copyright}</a></td>*/}
         <td>
@@ -142,7 +142,7 @@ export default class Profile extends Component {
               {/*<th width="20%">User Name</th>*/}
               <th width="20%">Item ID</th>
               <th width="20%">Item Name</th>
-              <th>Quantity</th>
+              {/*<th>Quantity</th>*/}
               <th>Status</th>
               {/*<th>Copyrightby</th>*/}
               <th width="10%">Actions</th>

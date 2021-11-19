@@ -14,7 +14,7 @@ class ItemEdit extends Component {
         username: '',
         itemID: '',
         itemName: '',
-        quantity: '',
+        // quantity: '',
         itemStatus: ''
     };
 
@@ -82,11 +82,11 @@ class ItemEdit extends Component {
                         <Input type="text" name="itemName" id="itemName" value={item.itemName || ''}
                                onChange={this.handleChange} autoComplete="itemName"/>
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="quantity">Quantity</Label>
-                        <Input type="text" name="quantity" id="quantity" value={item.quantity || ''}
-                               onChange={this.handleChange} autoComplete="quantity"/>
-                    </FormGroup>
+                    {/*<FormGroup>*/}
+                    {/*    <Label for="quantity">Quantity</Label>*/}
+                    {/*    <Input type="text" name="quantity" id="quantity" value={item.quantity || ''}*/}
+                    {/*           onChange={this.handleChange} autoComplete="quantity"/>*/}
+                    {/*</FormGroup>*/}
                     <FormGroup>
                         <Label for="itemStatus">Status</Label>
                         <Input type="text" name="itemStatus" id="itemStatus" value={item.itemStatus || ''}
