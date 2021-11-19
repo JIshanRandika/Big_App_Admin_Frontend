@@ -21,6 +21,43 @@ export default class Profile extends Component {
 
         };
     }
+    // updateOrder=(orderID)=>{
+    //     console.log("orderID")
+    //     fetch('http://localhost:8080/api/order', {
+    //         method:'PUT',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //
+    //         body: JSON.stringify({
+    //             // _id:id,
+    //             orderID:orderID,
+    //             acceptStatus:'done'
+    //
+    //         }),
+    //     });
+    //
+    // }
+
+
+    async updateOrder(id) {
+        fetch('http://localhost:8080/api/order', {
+            method:'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                _id:id,
+                acceptStatus:'done'
+
+            }),
+        });
+    }
+
+
 
     componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
@@ -106,8 +143,9 @@ export default class Profile extends Component {
                     )}</td>
                 {/*<td><a href={customer.copyright}>{customer.copyright}</a></td>*/}
                 <td>
+
                     <ButtonGroup>
-                        <Button size="sm" color="primary" >Accept</Button>
+                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Accept</Button>
                     </ButtonGroup>
                 </td>
             </tr>
