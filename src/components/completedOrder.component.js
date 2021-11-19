@@ -23,22 +23,34 @@ export default class CompletedOrderComponent extends Component {
     }
 
 
-    async updateOrder(id) {
-        fetch('http://localhost:8080/api/updateCompleteOrder', {
-            method:'PUT',
+    // async updateOrder(id) {
+    //     fetch('http://localhost:8080/api/updateCompleteOrder', {
+    //         method:'PUT',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //
+    //         body: JSON.stringify({
+    //             _id:id,
+    //             completeStatus:'done'
+    //
+    //         }),
+    //     }).then(window.location.reload());
+    // }
+    async remove(id) {
+        await fetch(`http://localhost:8080/api/order/${id}`, {
+            method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            },
-
-            body: JSON.stringify({
-                _id:id,
-                completeStatus:'done'
-
-            }),
-        }).then(window.location.reload());
+            }
+        }).then(() => {
+            console.log("Remove Done!");
+            let updatedItems = [...this.state.items].filter(i => i._id !== id);
+            this.setState({items: updatedItems});
+        });
     }
-
 
 
     componentDidMount() {
@@ -121,7 +133,7 @@ export default class CompletedOrderComponent extends Component {
                 <td>
 
                     <ButtonGroup>
-                        <Button style={{background:"#ff0000",border:'none'}} size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Delete</Button>
+                        <Button style={{background:"#ff0000",border:'none'}} size="sm" color="primary" onClick={() => this.remove(item._id)} >Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
