@@ -159,15 +159,6 @@ export default class Profile extends Component {
       </div>
 
 
-
-
-
-
-
-
-
-
-
     );
   }
 }
