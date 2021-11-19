@@ -16,10 +16,10 @@ export default class Profile extends Component {
             userReady: false,
             currentUser: { username: "" },
             items: [],
+            orderIDList:[],
             isLoading: true,
 
         };
-        this.remove = this.remove.bind(this);
     }
 
     componentDidMount() {
@@ -34,28 +34,20 @@ export default class Profile extends Component {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ searchUsername: currentUser.username})
+            body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('http://localhost:8080/api/itemforuser',requestOptions)
+        fetch('http://localhost:8080/api/orderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 
+
+
+
+
     }
 
-    async remove(id) {
-        await fetch(`http://localhost:8080/api/item/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(() => {
-            console.log("Remove Done!");
-            let updatedItems = [...this.state.items].filter(i => i._id !== id);
-            this.setState({items: updatedItems});
-        });
-    }
+
 
 
 
@@ -67,33 +59,55 @@ export default class Profile extends Component {
             return <Redirect to={this.state.redirect} />
         }
 
+
+
+
+
+
+
         const { currentUser } = this.state;
 
 
         const {items, isLoading} = this.state;
+
+        items.map(item=>{
+            var a = 'a'
+            for(let i=0; i<items.keyLength;i++){
+                if(a!==item.orderID){
+                    a=item.orderID
+
+                    const orderIDs = this.state.orderIDList;
+                    orderIDs.push(item.orderID)
+                }
+            }
+
+            console.log('this.state.orderIDList')
+        })
 
         if (isLoading) {
             return <p>Loading...</p>;
         }
 
         const itemList = items.map(item => {
-            // username: String,
-            //     itemID: String,
-            //     itemName: String,
-            //     quantity: String,
-            //     itemStatus: String,
 
+
+
+            // return <div>
+            //
+            //     { this.state.orderIDList.map((item, key)=>(
+            //         <td key={key} > { item } </td>)
+            //     )}
+            // </div>
             return <tr key={item._id}>
-                {/*<td style={{whiteSpace: 'nowrap'}}>{item.username}</td>*/}
-                <td>{item.itemID}</td>
-                <td>{item.itemName}</td>
-                {/*<td>{item.quantity}</td>*/}
-                <td>{item.itemStatus}</td>
+
+                <td>{item.orderID}</td>
+                <td>{ item.itemAndQuantity.map((item, key)=>(
+                        <div key={key} > { item } </div>)
+                    )}</td>
                 {/*<td><a href={customer.copyright}>{customer.copyright}</a></td>*/}
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/items/" + item._id}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(item._id)}>Delete</Button>
+                        <Button size="sm" color="primary" >Accept</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -111,23 +125,19 @@ export default class Profile extends Component {
                             </h3>
                         </header>
 
+                        {/*<p>{this.state.orderIDList}</p>*/}
                     </div>: null}
 
 
                 <Container fluid>
-                    <div className="float-right">
-                        <Button color="success" tag={Link} to="/items/new">Add Item</Button>
-                    </div>
-                    <h3>Item List</h3>
+
+                    <h3>New Order List</h3>
                     <Table className="mt-4">
                         <thead>
                         <tr>
                             {/*<th width="20%">User Name</th>*/}
-                            <th>Item ID</th>
-                            <th>Item Name</th>
-                            {/*<th>Quantity</th>*/}
-                            <th>Status</th>
-                            {/*<th>Copyrightby</th>*/}
+                            <th>OrderID</th>
+                            <th>Order Items</th>
                             <th>Actions</th>
                         </tr>
                         </thead>

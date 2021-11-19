@@ -14,6 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import ItemList from './components/itemEdit.component';
 import ItemEdit from './components/itemEdit.component';
+import NewOrder from './components/newOrder.component';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -108,6 +109,11 @@ class App extends Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to={"/neworder"} className="nav-link">
+                  New Orders
+                </Link>
+              </li>
+              <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
                   LogOut
                 </a>
@@ -136,6 +142,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/neworder" component={NewOrder} />
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
