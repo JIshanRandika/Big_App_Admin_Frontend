@@ -16,6 +16,7 @@ import ItemList from './components/itemEdit.component';
 import ItemEdit from './components/itemEdit.component';
 import NewOrder from './components/newOrder.component';
 import AcceptedOrder from './components/acceptedOrder.component';
+import ReadyOrder from './components/readyOrder.component';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -120,6 +121,11 @@ class App extends Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to={"/readyorder"} className="nav-link">
+                  ReadyOrders
+                </Link>
+              </li>
+              <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
                   LogOut
                 </a>
@@ -150,6 +156,7 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/neworder" component={NewOrder} />
             <Route exact path="/acceptedorder" component={AcceptedOrder} />
+            <Route exact path="/readyorder" component={ReadyOrder} />
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
