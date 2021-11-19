@@ -121,7 +121,7 @@ export default class CompletedOrderComponent extends Component {
                 <td>
 
                     <ButtonGroup>
-                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Delete</Button>
+                        <Button style={{background:"#ff0000",border:'none'}} size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>

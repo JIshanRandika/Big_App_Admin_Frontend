@@ -121,7 +121,7 @@ export default class AcceptedOrderComponent extends Component {
                 <td>
 
                     <ButtonGroup>
-                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Ready</Button>
+                        <Button style={{background:"#006ec1",border:'none'}} size="sm"  onClick={() => this.updateOrder(item._id)} >Ready</Button>
                     </ButtonGroup>
                 </td>
             </tr>

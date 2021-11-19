@@ -121,7 +121,7 @@ export default class ReadyOrderComponent extends Component {
                 <td>
 
                     <ButtonGroup>
-                        <Button size="sm" color="primary" onClick={() => this.updateOrder(item._id)} >Complete</Button>
+                        <Button style={{background:"#086a00",border:'none'}} size="sm" onClick={() => this.updateOrder(item._id)} >Complete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
