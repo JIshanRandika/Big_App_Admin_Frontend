@@ -39,7 +39,7 @@ export default class CompletedOrderComponent extends Component {
     //     }).then(window.location.reload());
     // }
     async remove(id) {
-        await fetch(`http://localhost:8080/api/order/${id}`, {
+        await fetch(`https://bigdealershipbackend.herokuapp.com/api/order/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -68,7 +68,7 @@ export default class CompletedOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('http://localhost:8080/api/completedorderforuser',requestOptions)
+        fetch('https://bigdealershipbackend.herokuapp.com/api/completedorderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 

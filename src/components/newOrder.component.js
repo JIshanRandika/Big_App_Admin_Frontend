@@ -42,7 +42,7 @@ export default class NewOrderComponent extends Component {
 
 
     async updateOrder(id) {
-        fetch('http://localhost:8080/api/updateAcceptOrder', {
+        fetch('https://bigdealershipbackend.herokuapp.com/api/updateAcceptOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
