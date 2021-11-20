@@ -141,6 +141,7 @@ export default class NewOrderComponent extends Component {
                 <td>{ item.itemAndQuantity.map((item, key)=>(
                         <div key={key} > { item } </div>)
                     )}</td>
+                <td>{item.orderDescription}</td>
                 {/*<td><a href={customer.copyright}>{customer.copyright}</a></td>*/}
                 <td>
 
@@ -176,6 +177,7 @@ export default class NewOrderComponent extends Component {
                             {/*<th width="20%">User Name</th>*/}
                             <th>OrderID</th>
                             <th>Order Items</th>
+                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
