@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_URL = "https://bigdealershipbackend.herokuapp.com/api/auth/";
+const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+const API_URL = rooturl+"/api/auth/";
 
 class AuthService {
   login(username, password) {

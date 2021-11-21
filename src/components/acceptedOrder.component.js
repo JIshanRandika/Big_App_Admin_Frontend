@@ -24,7 +24,9 @@ export default class AcceptedOrderComponent extends Component {
 
 
     async updateOrder(id) {
-        fetch('https://bigdealershipbackend.herokuapp.com/api/updateReadyOrder', {
+        const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+        fetch(rooturl+'/api/updateReadyOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -56,7 +58,9 @@ export default class AcceptedOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('https://bigdealershipbackend.herokuapp.com/api/acceptedorderforuser',requestOptions)
+        const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+        fetch(rooturl+'/api/acceptedorderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 

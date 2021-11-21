@@ -37,14 +37,19 @@ export default class Profile extends Component {
       body: JSON.stringify({ searchUsername: currentUser.username})
     };
 
-    fetch('https://bigdealershipbackend.herokuapp.com/api/itemforuser',requestOptions)
+    const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+    fetch(rooturl+'/api/itemforuser',requestOptions)
         .then(response => response.json())
         .then(data => this.setState({items: data, isLoading: false}));
 
   }
 
   async remove(id) {
-    await fetch(`https://bigdealershipbackend.herokuapp.com/api/item/${id}`, {
+
+    const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+    await fetch(rooturl+`/api/item/${id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',

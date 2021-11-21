@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import axios from "axios";
 
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 // import AppNavbar from './AppNavbar';
@@ -42,7 +43,9 @@ export default class NewOrderComponent extends Component {
 
 
     async updateOrder(id) {
-        fetch('https://bigdealershipbackend.herokuapp.com/api/updateAcceptOrder', {
+        const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+        fetch(rooturl+'/api/updateAcceptOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -74,7 +77,11 @@ export default class NewOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        fetch('http://localhost:8080/api/neworderforuser',requestOptions)
+        const rooturl = process.env.rooturl || 'http://localhost:8080'
+
+        // const { data } = await axios.get(rooturl + '/api/neworderforuser/');
+
+        fetch(rooturl+'/api/neworderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 
