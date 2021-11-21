@@ -25,7 +25,7 @@ export default class ReadyOrderComponent extends Component {
 
     async updateOrder(id) {
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/updateCompleteOrder', {
             method:'PUT',
@@ -59,7 +59,7 @@ export default class ReadyOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/readyorderforuser',requestOptions)
             .then(response => response.json())

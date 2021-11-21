@@ -43,7 +43,7 @@ export default class NewOrderComponent extends Component {
 
 
     async updateOrder(id) {
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/updateAcceptOrder', {
             method:'PUT',
@@ -77,7 +77,7 @@ export default class NewOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         // const { data } = await axios.get(rooturl + '/api/neworderforuser/');
 

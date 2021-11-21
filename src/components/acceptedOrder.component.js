@@ -24,7 +24,7 @@ export default class AcceptedOrderComponent extends Component {
 
 
     async updateOrder(id) {
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/updateReadyOrder', {
             method:'PUT',
@@ -58,7 +58,7 @@ export default class AcceptedOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/acceptedorderforuser',requestOptions)
             .then(response => response.json())

@@ -43,7 +43,7 @@ export default class CompletedOrderComponent extends Component {
 
     async remove(id) {
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         await fetch(rooturl+`/api/order/${id}`, {
             method: 'DELETE',
@@ -74,7 +74,7 @@ export default class CompletedOrderComponent extends Component {
             body: JSON.stringify({ searchShopname: currentUser.username})
         };
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         fetch(rooturl+'/api/completedorderforuser',requestOptions)
             .then(response => response.json())

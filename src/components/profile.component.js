@@ -47,7 +47,7 @@ export default class Profile extends Component {
 
   async remove(id) {
 
-    const rooturl = process.env.rooturl || 'http://localhost:8080'
+    const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
     await fetch(rooturl+`/api/item/${id}`, {
       method: 'DELETE',

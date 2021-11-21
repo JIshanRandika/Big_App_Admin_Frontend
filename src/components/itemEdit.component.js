@@ -28,7 +28,7 @@ class ItemEdit extends Component {
     }
 
     async componentDidMount() {
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         if (this.props.match.params.id !== 'new') {
             const item = await (await fetch(rooturl+`/api/item/${this.props.match.params.id}`)).json();
@@ -49,7 +49,7 @@ class ItemEdit extends Component {
         event.preventDefault();
         const {item} = this.state;
 
-        const rooturl = process.env.rooturl || 'http://localhost:8080'
+        const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         await fetch(rooturl+'/api/item', {
             method: (item._id) ? 'PUT' : 'POST',

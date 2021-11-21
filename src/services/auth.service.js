@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const rooturl = process.env.rooturl || 'http://localhost:8080'
+const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
 const API_URL = rooturl+"/api/auth/";
 
