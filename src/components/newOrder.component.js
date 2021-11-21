@@ -45,7 +45,7 @@ export default class NewOrderComponent extends Component {
     async updateOrder(id) {
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        fetch(rooturl+'/api/updateAcceptOrder', {
+        fetch('https://bigdealershipbackend.herokuapp.com/api/updateAcceptOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -62,7 +62,7 @@ export default class NewOrderComponent extends Component {
 
 
 
-    componentDidMount() {
+   async componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
 
         if (!currentUser) this.setState({ redirect: "/home" });
@@ -79,9 +79,19 @@ export default class NewOrderComponent extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        // const { data } = await axios.get(rooturl + '/api/neworderforuser/');
+       // const { data } = await axios.get('http://localhost:5000/api/neworderforuser/');
 
-        fetch(rooturl+'/api/neworderforuser',requestOptions)
+        // await axios.get(rooturl + '/api/neworderforuser/')
+        // .then((response)=>{
+        //     const getdata=response.data;
+        //     this.setState({items: getdata, isLoading: false})
+        // })
+
+
+       // http://localhost:8080/api/neworderforuser
+       // https://bigdealershipbackend.herokuapp.com/api/neworderforuser
+
+        fetch('https://bigdealershipbackend.herokuapp.com/api/neworderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 

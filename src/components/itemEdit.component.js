@@ -31,7 +31,7 @@ class ItemEdit extends Component {
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
         if (this.props.match.params.id !== 'new') {
-            const item = await (await fetch(rooturl+`/api/item/${this.props.match.params.id}`)).json();
+            const item = await (await fetch(`https://bigdealershipbackend.herokuapp.com/api/item/${this.props.match.params.id}`)).json();
             this.setState({item: item});
         }
     }
@@ -51,7 +51,7 @@ class ItemEdit extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        await fetch(rooturl+'/api/item', {
+        await fetch('https://bigdealershipbackend.herokuapp.com/api/item', {
             method: (item._id) ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',

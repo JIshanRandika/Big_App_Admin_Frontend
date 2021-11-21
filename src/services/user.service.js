@@ -4,7 +4,7 @@ import authHeader from './auth-header';
 
 const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-const API_URL = rooturl+'/api/test/';
+const API_URL = 'https://bigdealershipbackend.herokuapp.com/api/test/';
 
 // const API_URL = 'https://bigdealershipbackend.herokuapp.com/api/test/';
 

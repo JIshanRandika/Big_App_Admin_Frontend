@@ -27,7 +27,7 @@ export default class ReadyOrderComponent extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        fetch(rooturl+'/api/updateCompleteOrder', {
+        fetch('https://bigdealershipbackend.herokuapp.com/api/updateCompleteOrder', {
             method:'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -61,7 +61,7 @@ export default class ReadyOrderComponent extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        fetch(rooturl+'/api/readyorderforuser',requestOptions)
+        fetch('https://bigdealershipbackend.herokuapp.com/api/readyorderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 

@@ -39,7 +39,7 @@ export default class Profile extends Component {
 
     const rooturl = process.env.rooturl || 'http://localhost:8080'
 
-    fetch(rooturl+'/api/itemforuser',requestOptions)
+    fetch('https://bigdealershipbackend.herokuapp.com/api/itemforuser',requestOptions)
         .then(response => response.json())
         .then(data => this.setState({items: data, isLoading: false}));
 
@@ -49,7 +49,7 @@ export default class Profile extends Component {
 
     const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-    await fetch(rooturl+`/api/item/${id}`, {
+    await fetch(`https://bigdealershipbackend.herokuapp.com/api/item/${id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',

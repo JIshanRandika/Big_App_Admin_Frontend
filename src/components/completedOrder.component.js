@@ -45,7 +45,7 @@ export default class CompletedOrderComponent extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        await fetch(rooturl+`/api/order/${id}`, {
+        await fetch(`https://bigdealershipbackend.herokuapp.com/api/order/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -76,7 +76,7 @@ export default class CompletedOrderComponent extends Component {
 
         const rooturl = process.env.REACT_APP_ROOT_URL || 'http://localhost:8080'
 
-        fetch(rooturl+'/api/completedorderforuser',requestOptions)
+        fetch('https://bigdealershipbackend.herokuapp.com/api/completedorderforuser',requestOptions)
             .then(response => response.json())
             .then(data => this.setState({items: data, isLoading: false}));
 
