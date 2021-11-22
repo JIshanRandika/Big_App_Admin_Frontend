@@ -57,7 +57,7 @@ export default class Home extends Component {
           </Row>
           <Row style={{width:'100%',alignItems:'center',textAlign:'center',margin:0}}>
             <div>
-              <Button style={{width:'80vw',background:'#2892D7'}}  tag={Link} to="/login"><span style={{fontSize:'3vw'}}>CREATE YOUR SHOP</span></Button>
+              <Button style={{width:'80vw',background:'#2892D7'}}  tag={Link} to="/register"><span style={{fontSize:'3vw'}}>CREATE YOUR SHOP</span></Button>
             </div>
           </Row>
         </Col>
@@ -108,7 +108,16 @@ export default class Home extends Component {
 
           </Col>
           <Col md="4" xd="12">
-            <div style={{fontSize:'12px',textAlign:'right',marginTop:5,marginBottom:5}}><span style={{color:'#ffffff',marginRight:10}}>About us</span><span style={{color:'#ffffff'}}>Privacy Policy</span></div>
+            <div style={{fontSize:'12px',textAlign:'right',marginTop:5,marginBottom:5}}>
+              <span style={{color:'#ffffff',marginRight:10}}>
+                <a href="#" style={{color:'#ffffff'}}>Contact Us</a>
+              </span>
+              <span style={{color:'#ffffff',marginRight:10}}>
+                <a href="#" style={{color:'#ffffff'}}>About Us</a>
+              </span>
+              <span style={{color:'#ffffff'}}>
+                <a href="#" style={{color:'#ffffff'}}>Privacy Policy</a>
+              </span></div>
           </Col>
         </Row>
 
