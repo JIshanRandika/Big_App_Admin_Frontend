@@ -126,8 +126,8 @@ class App extends Component {
 
 
                 {currentUser ? (
-                    <Nav.Link href="/login">
-                      <a style={{margin:0,padding:0}} href="/login" className="nav-link" onClick={this.logOut}>
+                    <Nav.Link href="/home">
+                      <a style={{margin:0,padding:0}} href="/home" className="nav-link" onClick={this.logOut}>
                         Log Out
                       </a>
                     </Nav.Link>
