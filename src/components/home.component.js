@@ -70,7 +70,7 @@ export default class Home extends Component {
           </Col>
           <Col md="4" xd="12">
             <div style={{alignItems:'center',width:'100%',textAlign:'center',background:'rgba(177,177,177,0.64)',borderRadius:10,marginBottom:10, marginTop:10}}>
-              <div style={{fontSize:'24px',fontWeight:'bold'}}><span style={{color:'#173753'}}>Create the order</span></div>
+              <div style={{fontSize:'24px',fontWeight:'bold'}}><span style={{color:'#173753'}}>Create the orders</span></div>
             </div>
           </Col>
           <Col md="4" xd="12">
@@ -113,7 +113,7 @@ export default class Home extends Component {
                 <a href="/contactus" style={{color:'#ffffff'}}>Contact Us</a>
               </span>
               <span style={{color:'#ffffff',marginRight:10}}>
-                <a href="#" style={{color:'#ffffff'}}>About Us</a>
+                <a href="/aboutus" style={{color:'#ffffff'}}>About Us</a>
               </span>
               <span style={{color:'#ffffff'}}>
                 <a href="#" style={{color:'#ffffff'}}>Privacy Policy</a>
