@@ -69,7 +69,9 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div style={{background:'#173753'}}>
+        {/*<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">*/}
+          <Navbar collapseOnSelect expand="lg" variant="dark">
           <Container>
             <Navbar.Brand href="/">BIG DEALERSHIP</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -135,7 +137,7 @@ class App extends Component {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
+        </div>
 
         {/*<nav className="navbar navbar-expand navbar-dark bg-dark">*/}
           {/*<Link to={"/"} className="navbar-brand">*/}
