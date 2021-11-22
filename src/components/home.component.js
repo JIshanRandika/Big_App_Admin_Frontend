@@ -110,7 +110,7 @@ export default class Home extends Component {
           <Col md="4" xd="12">
             <div style={{fontSize:'12px',textAlign:'right',marginTop:5,marginBottom:5}}>
               <span style={{color:'#ffffff',marginRight:10}}>
-                <a href="#" style={{color:'#ffffff'}}>Contact Us</a>
+                <a href="/contactus" style={{color:'#ffffff'}}>Contact Us</a>
               </span>
               <span style={{color:'#ffffff',marginRight:10}}>
                 <a href="#" style={{color:'#ffffff'}}>About Us</a>

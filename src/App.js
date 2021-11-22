@@ -19,6 +19,7 @@ import NewOrder from './components/newOrder.component';
 import AcceptedOrder from './components/acceptedOrder.component';
 import ReadyOrder from './components/readyOrder.component';
 import CompletedOrder from './components/completedOrder.component';
+import ContactUsComponent from './components/contactUs.component';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -242,6 +243,7 @@ class App extends Component {
             <Route path="/admin" component={BoardAdmin} />
             <Route path='/items' exact={true} component={ItemList}/>
             <Route path='/items/:id' component={ItemEdit}/>
+            <Route path='/contactus' component={ContactUsComponent}/>
           </Switch>
         </div>
 
