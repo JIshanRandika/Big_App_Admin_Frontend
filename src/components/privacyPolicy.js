@@ -107,12 +107,6 @@ export default class PrivacyPolicy extends Component {
                     </strong></p1>
                 </strong></p1>
 
-                <p1><strong>
-                    <p1><strong>
-                        CONTACT US
-                    </strong></p1>
-                </strong></p1>
-
                 <p style={{marginTop:10}}>
                     For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at big.dealership@gmail.com.
                 </p>
