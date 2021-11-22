@@ -40,15 +40,15 @@ export default class Home extends Component {
         {/*  <h3>{this.state.content}</h3>*/}
         {/*</header>*/}
         <Col md="12" xd="12">
-          <Row style={{width:'100%',background:'rgba(210,210,210,0.64)',textAlign:'center',alignItems:'center',borderRadius:20}}>
+          <Row style={{width:'100%',background:'rgba(210,210,210,0.64)',textAlign:'center',alignItems:'center',borderRadius:20,margin:0}}>
 
             <div style={{alignItems:'center',width:'100%',textAlign:'center'}}>
               <div style={{fontSize:'8vw',fontWeight:'bold'}}><span style={{color:'#2892D7'}}>BIG</span><span style={{color:'#173753'}}> DEALERSHIP</span></div>
             </div>
 
           </Row>
-          <Row style={{width:'100%',alignItems:'center',textAlign:'center'}}>
-            <div style={{alignItems:'center',textAlign:'center'}}>
+          <Row style={{width:'100%',alignItems:'center',textAlign:'center',margin:0}}>
+            <div style={{alignItems:'center',textAlign:'center',margin:0}}>
               <img
                   src={("img/logo.png")}
                   width= '300vw'
@@ -57,7 +57,7 @@ export default class Home extends Component {
           </Row>
 
         </Col>
-        <Row style={{width:'100%',alignItems:'center',textAlign:'center'}}>
+        <Row style={{width:'100%',alignItems:'center',textAlign:'center',margin:0}}>
           <div>
             <Button style={{width:'80vw',background:'#2892D7'}}  tag={Link} to="/login"><span style={{fontSize:'3vw'}}>GET START</span></Button>
           </div>
