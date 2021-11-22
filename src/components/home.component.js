@@ -91,16 +91,24 @@ export default class Home extends Component {
               <Col md="3" xd="3">
               </Col>
               <Col md="2" xd="2">
-                <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaFacebook /></div>
+                <a href="https://www.facebook.com/Big-Dealership-104734122042154/?notif_id=1637589326825608&notif_t=page_invite_accept&ref=notif" target='_blank'>
+                  <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaFacebook /></div>
+                </a>
               </Col>
               <Col md="2" xd="2">
-                <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaYoutube /></div>
+                <a href="https://www.youtube.com/channel/UCRnE5ucWNMYkcjd8Z67wMeg" target='_blank'>
+                  <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaYoutube /></div>
+                </a>
               </Col>
               <Col md="2" xd="2">
-                <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaInstagram /></div>
+                <a href="#" target='_blank'>
+                  <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaInstagram /></div>
+                </a>
               </Col>
               <Col md="3" xd="3">
-                <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaEnvelope /></div>
+                <a href="mailto:big.dealership@gmail.com" target='_blank'>
+                  <div style={{background:'white',borderRadius:50,width:'30px',height:'30px',textAlign:'center',marginTop:5,marginBottom:5}}>  <FaEnvelope /></div>
+                </a>
               </Col>
 
 
