@@ -116,7 +116,7 @@ export default class Home extends Component {
                 <a href="/aboutus" style={{color:'#ffffff'}}>About Us</a>
               </span>
               <span style={{color:'#ffffff'}}>
-                <a href="#" style={{color:'#ffffff'}}>Privacy Policy</a>
+                <a href="/privacypolicy" style={{color:'#ffffff'}}>Privacy Policy</a>
               </span></div>
           </Col>
         </Row>

@@ -21,6 +21,7 @@ import ReadyOrder from './components/readyOrder.component';
 import CompletedOrder from './components/completedOrder.component';
 import ContactUsComponent from './components/contactUs.component';
 import AboutUsComponent from './components/aboutUs.component';
+import PrivacyPolicy from './components/privacyPolicy';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -246,6 +247,7 @@ class App extends Component {
             <Route path='/items/:id' component={ItemEdit}/>
             <Route path='/contactus' component={ContactUsComponent}/>
             <Route path='/aboutus' component={AboutUsComponent}/>
+            <Route path='/privacypolicy' component={PrivacyPolicy}/>
           </Switch>
         </div>
 
