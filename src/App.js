@@ -129,7 +129,8 @@ class App extends Component {
                       </a>
                     </Nav.Link>
                 ):(
-                    <Nav.Link href="/register">Sign Up</Nav.Link>
+                    <div></div>
+                    // <Nav.Link href="/register">Sign Up</Nav.Link>
                 )}
                 {/*<Nav.Link href="#deets">More deets</Nav.Link>*/}
 
@@ -225,7 +226,8 @@ class App extends Component {
         {/*  )}*/}
         {/*</nav>*/}
 
-        <div className="container mt-3">
+        {/*<div className="container mt-3">*/}
+        <div>
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
