@@ -51,7 +51,7 @@ export default class Home extends Component {
             <div style={{alignItems:'center',textAlign:'center'}}>
               <img
                   src={("img/logo.png")}
-                  width= '450px'
+                  width= '400vw'
               />
             </div>
           </Row>
